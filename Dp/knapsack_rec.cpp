@@ -1,10 +1,15 @@
 /*
-Given weights and values of N items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..N-1] and wt[0..N-1] which represent values and weights associated with N items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that the sum of the weights of this subset is smaller than or equal to W. You cannot break an item, either pick the complete item or don’t pick it (0-1 property)
+Given weights and values of N items, put these items in a knapsack of capacity W to get the maximum total 
+value in the knapsack. In other words, given two integer arrays val[0..N-1] and wt[0..N-1] which represent 
+values and weights associated with N items respectively. Also given an integer W which represents knapsack 
+capacity, find out the maximum value subset of val[] such that the sum of the weights of this subset is smaller 
+than or equal to W. You cannot break an item, either pick the complete item or don’t pick it (0-1 property)
 */
+
+// Using Recursion 
 #include<iostream>
 #include<vector>
 using namespace std;
-//recursive 
 int knapsack(vector<int>wt,vector<int>val,int w,int n)
 {
     //base case
@@ -13,7 +18,6 @@ int knapsack(vector<int>wt,vector<int>val,int w,int n)
         return 0;
     }
     //choice daigram
-    //not chose
     if(wt[n-1]>w)
     {
         return knapsack(wt,val,w,n-1);
